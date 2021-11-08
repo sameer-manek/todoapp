@@ -1,0 +1,4 @@
+{
+	"port": 4000,
+	"session_key": "something_secret"
+}

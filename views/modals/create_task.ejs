@@ -1,0 +1,72 @@
+<div class="overlay" id="create_task_popup">
+	<div class="modal">
+		<form>
+			<div class="title">Create Task</div>
+
+			<div class="field">
+				<label for="ct_title">Title:</label>
+				<input type="text" name="title" id="ct_title" />
+			</div>
+
+			<div class="field">
+				<label for="ct_desc" class="lifted">Description:</label>
+				<textarea
+					name="desc"
+					id="ct_desc"
+					cols="30"
+					rows="10"
+				></textarea>
+			</div>
+
+			<div class="field">
+				<label for="ct_title">Due Date:</label>
+				<input type="date" name="date" id="ct_date" />
+			</div>
+
+			<div class="action-field">
+				<button type="button" class="primary" onclick="create_task()">
+					Create Task
+				</button>
+				<button
+					type="button"
+					class="secondary"
+					onclick="kill_ct_process()"
+				>
+					Cancel
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	async function create_task() {
+		let title = document.getElementById('ct_title').value;
+		let desc = document.getElementById('ct_desc').value;
+		let due_date = document.getElementById('ct_date').value;
+
+		let res = await axios.post('/task/create', {
+			title,
+			desc,
+			due_date,
+		});
+
+		alert(res.data.message);
+		kill_ct_process();
+	}
+
+	function kill_ct_process(e) {
+		document.getElementById('ct_title').value = '';
+		document.getElementById('ct_desc').value = '';
+		document.getElementById('ct_date').value = '';
+
+		let popups = document.getElementsByClassName('overlay');
+		popups = Array.prototype.slice.call(popups);
+
+		console.log({ popups });
+
+		popups.forEach((popup) => {
+			popup.style.display = 'none';
+		});
+	}
+</script>

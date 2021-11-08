@@ -1,0 +1,24 @@
+<%if (failed) {%>
+<div class="form-notif error">Invalid Credentials. Please try again</div>
+<%}%>
+
+<form action="" method="POST" class="login-form">
+	<h3 class="title">Login</h3>
+	<div class="field">
+		<label for="email">Your Email: </label>
+		<input type="email" name="email" id="email" />
+	</div>
+
+	<div class="field">
+		<label for="password">Password: </label>
+		<input type="password" name="password" id="password" />
+	</div>
+
+	<div class="action-field">
+		<button class="primary" type="submit">Login</button>
+	</div>
+</form>
+
+<p class="centered">
+	not registered yet? please <a href="/user/register">Sign up</a> here.
+</p>

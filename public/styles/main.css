@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	max-width: 1024px;
+	margin: 0 auto;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.white {
+	background-color: white;
+	padding: 0.2rem 1rem;
+	float: right;
+	margin: 0.25rem;
+	text-decoration: none;
+}
+
+button,
+a {
+	cursor: pointer;
+}
+
+a {
+	color: #3b5998;
+}
+
+p.centered {
+	text-align: center;
+}
+
+.login-form {
+	border: 2px solid silver;
+	width: 20vw;
+	margin: 5vh auto;
+}
+
+.form-notif {
+	width: 20vw;
+	margin: 2vh auto;
+	text-align: center;
+}
+
+.form-notif.error {
+	border: 2px solid red;
+	background-color: rgba(255, 0, 0, 0.1);
+}
+
+.form-notif.success {
+	border: 2px solid green;
+	background-color: rgba(0, 255, 0, 0.1);
+}
+
+form .title {
+	color: white;
+	display: block;
+	padding: 0.5rem;
+	text-align: center;
+	background-color: #3b5998;
+	margin-top: 0;
+	font-weight: bolder;
+}
+
+form .field label {
+	width: 7rem;
+	display: inline-block;
+	padding-left: 0.5rem;
+}
+
+form .field input,
+form .field textarea {
+	width: 12vw;
+	font-size: 12px;
+	resize: none;
+}
+
+form .field label.lifted {
+	position: relative;
+	top: -8rem;
+}
+
+.action-field {
+	text-align: right;
+	padding: 0 1rem;
+}
+
+.field,
+.action-field {
+	margin: 0.5rem;
+}
+
+button.primary {
+	border: white;
+	color: white;
+	background-color: #3b5998;
+	padding: 0.5rem;
+	font-weight: bold;
+}
+
+button.secondary {
+	border: silver;
+	color: black;
+	background-color: rgba(40, 40, 40, 0.3);
+	padding: 0.5rem;
+	font-weight: bold;
+}
+
+/* POPUPS */
+
+.overlay {
+	display: none;
+	position: fixed;
+	width: 100vw;
+	height: 100vw;
+	overflow: hidden;
+	z-index: 10;
+	background-color: rgba(40, 40, 50, 0.7);
+	top: 0;
+	left: 0;
+}
+
+.overlay .modal {
+	display: block;
+	margin: 10vw auto;
+	width: 20vw;
+	height: auto;
+	background-color: white;
+	padding: 0.2rem;
+	border-radius: 0.2rem;
+}
+
+/* Profile */
+
+.profile_header {
+	height: 3rem;
+	width: 100vw;
+	left: 0;
+	position: fixed;
+	background-color: #3b5998;
+	font-weight: bold;
+	color: white;
+	padding: 0.25rem 0.5rem;
+}
+
+.profile_header nav {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+.profile_header h2 {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+div.profile {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.profile .sidebar,
+.profile .content {
+	display: block;
+	padding-top: 4rem;
+}
+
+.profile .sidebar {
+	flex: 1;
+	flex-grow: 1;
+	width: 200px;
+	background-color: rgba(59, 89, 152, 0.2);
+	text-align: center;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.profile .content {
+	flex: 4;
+	flex-grow: 4;
+	margin-left: 24px;
+}
+
+.profile .sidebar .link {
+	margin: 0.2rem 0;
+}
+
+.profile .sidebar .link a {
+	text-decoration: none;
+	display: block;
+	padding: 0.5rem auto;
+}
+
+.profile .sidebar .link a:hover {
+	background-color: rgba(59, 89, 152, 0.3);
+}
+
+/* profile tasks */
+
+.profile .content .task {
+	border: 2px solid silver;
+	border-radius: 0.5rem;
+	margin: 2rem auto;
+	width: 48rem;
+}
+
+.profile .content .task .task_title {
+	padding: 0.5rem 1rem;
+	color: white;
+	background-color: #3b5998;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.profile .content .task .task_desc {
+	padding: 0.5rem 1rem;
+}
+
+.profile .content .task .task_actions {
+	padding: 0.5rem 1rem;
+	text-align: right;
+}

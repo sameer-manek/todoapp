@@ -1,0 +1,34 @@
+<%if (failed) {%>
+<div class="form-notif error"><%= message %></div>
+<%}%> <%if (typeof(success) !== 'undefined' && success === true) {%>
+<div class="form-notif success">
+	You are now a user! Please login to continue.
+</div>
+<%}%>
+
+<form action="" method="POST" class="login-form">
+	<h3 class="title">Sign Up</h3>
+
+	<div class="field">
+		<label for="name">Your Name: </label>
+		<input type="text" name="name" id="name" />
+	</div>
+
+	<div class="field">
+		<label for="email">Your Email: </label>
+		<input type="email" name="email" id="email" />
+	</div>
+
+	<div class="field">
+		<label for="password">Password: </label>
+		<input type="password" name="password" id="password" />
+	</div>
+
+	<div class="action-field">
+		<button class="primary" type="submit">Register</button>
+	</div>
+</form>
+
+<p class="centered">
+	Already registered? please <a href="/user/login">login</a> here.
+</p>
